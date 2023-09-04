@@ -48,6 +48,7 @@ class AuthController extends BaseController
                         'id' => $data['id'],
                         'nama' => $data['nama'],
                         'nip' => $data['nip'],
+                        'picture' => $data['picture'],
                         'is_pegawai' => 1,
                         'isLogin' => true
                     ];
@@ -58,6 +59,7 @@ class AuthController extends BaseController
                         'id' => $data['id'],
                         'nama' => $data['nama'],
                         'nip' => $data['nip'],
+                        'picture' => $data['picture'],
                         'is_pegawai' => 0,
                         'isLogin' => true
                     ];
