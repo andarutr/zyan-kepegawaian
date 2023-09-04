@@ -44,18 +44,31 @@ class ProfileController extends BaseController
         $newName = $img->getRandomName();
         if(!empty($_FILES['picture']['name']))
         {
-            $img->move(FCPATH.'assets/dist/img/profile/', $newName);
+            $validated = $this->validate([
+                'picture' => [
+                    'uploaded[picture]',
+                    'mime_in[picture,image/jpg,image/jpeg]',
+                    'max_size[picture,300]',
+                ],
+            ]);
+     
+            if ($validated) {
+                $img->move(FCPATH.'assets/dist/img/profile/', $newName);
 
-            $data = [
-                'nama' => $this->request->getPost('nama'),
-                'nip' => $this->request->getPost('nip'),
-                'pendidikan' => $this->request->getPost('pendidikan'),
-                'jabatan' => $this->request->getPost('jabatan'),
-                'tempat_lahir' => $this->request->getPost('tempat_lahir'),
-                'tgl_lahir' => $this->request->getPost('tgl_lahir'),
-                'picture' => $newName,
-                'updated_at' => date('d F Y')
-            ];
+                $data = [
+                    'nama' => $this->request->getPost('nama'),
+                    'nip' => $this->request->getPost('nip'),
+                    'pendidikan' => $this->request->getPost('pendidikan'),
+                    'jabatan' => $this->request->getPost('jabatan'),
+                    'tempat_lahir' => $this->request->getPost('tempat_lahir'),
+                    'tgl_lahir' => $this->request->getPost('tgl_lahir'),
+                    'picture' => $newName,
+                    'updated_at' => date('d F Y')
+                ];
+            }else{
+                return redirect()->back()->with('msg', 'Gambar maksimal 300Kb!');
+            }
+
         }else{
             $data = [
                 'nama' => $this->request->getPost('nama'),
