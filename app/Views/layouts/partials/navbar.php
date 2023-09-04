@@ -10,7 +10,7 @@
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+      <a href="<?= base_url('logout') ?>">
         <i class="fas fa-sign-out-alt"></i>
       </a>
     </li>

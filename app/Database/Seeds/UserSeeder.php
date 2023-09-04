@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
             'tgl_lahir' => '22-02-2001',
             'tempat_lahir' => 'Ponorogo, Jawa Timur',
             'password' => password_hash('admin123', PASSWORD_DEFAULT),
-            'is_admin' => 1,
+            'picture' => 'user.png',
+            'is_pegawai' => 1,
             'updated_at' => date('Y-m-d'),
             'created_at' => date('Y-m-d'),
         ]);

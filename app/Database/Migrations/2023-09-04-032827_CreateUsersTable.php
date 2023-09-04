@@ -43,7 +43,11 @@ class CreateUsersTable extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255
             ],
-            'is_admin' => [
+            'picture' => [
+                'type' => 'VARCHAR',
+                'constraint' => 128
+            ],
+            'is_pegawai' => [
                 'type' => 'BOOLEAN',
             ],
             'updated_at' => [
