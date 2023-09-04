@@ -7,13 +7,7 @@
       <h3 class="card-title">Dashboard</h3>
     </div> <!-- /.card-body -->
     <div class="card-body">
-      <p>You can use any font library you like with AdminLTE 3.</p>
-      <strong>Recommendations</strong>
-      <div>
-        <a href="https://fontawesome.com/">Font Awesome</a><br>
-        <a href="https://useiconic.com/open/">Iconic Icons</a><br>
-        <a href="https://ionicons.com/">Ion Icons</a><br>
-      </div>
+      <p>Selamat datang bapak/ibu <?= session()->get('nama') ?></p>
     </div><!-- /.card-body -->
   </div>
 </div><!-- /.container-fluid -->
