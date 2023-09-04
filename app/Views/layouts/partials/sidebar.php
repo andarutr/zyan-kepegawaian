@@ -58,6 +58,18 @@
             <p>Profile</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?= base_url('/user/pendidikan') ?>" class="nav-link">
+            <i class="nav-icon fas fa-graduation-cap"></i>
+            <p>Pendidikan</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('/user/pelatihan') ?>" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>Pelatihan</p>
+          </a>
+        </li>
         <?php endif ?>
       </ul>
     </nav>
