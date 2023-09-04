@@ -13,7 +13,7 @@ class PendidikanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['id','user_id','tingkat','universitas','jurusan','tahun_lulus'];
 
     // Dates
     protected $useTimestamps = false;

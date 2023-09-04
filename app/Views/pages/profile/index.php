@@ -3,6 +3,16 @@
 <?= $this->section('content') ?>
 <div class="container-fluid">
   <div class="row">
+    <div class="col-lg-12">
+    <?php if(session('msg')) : ?>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <p><?= session('msg') ?></p>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <?php endif ?>
+    </div>
     <div class="col-lg-4">
       <div class="card card-primary card-outline">
         <div class="card-header">
@@ -28,11 +38,7 @@
           <h3 class="card-title">Edit Profile</h3>
         </div> <!-- /.card-body -->
         <div class="card-body">
-          <?php if(session()->get('is_pegawai') === 1): ?>
-          <?= form_open_multipart('/pegawai/profile') ?>
-          <?php else: ?>
-          <?= form_open_multipart('/user/profile') ?>
-          <?php endif ?>
+          <?= form_open_multipart($req->uri->getSegment(1).'/profile') ?>
             <div class="card-body">
               <div class="form-group">
                 <label for="nip">NIP</label>

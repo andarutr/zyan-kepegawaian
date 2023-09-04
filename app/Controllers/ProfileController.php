@@ -17,6 +17,8 @@ class ProfileController extends BaseController
     {
         $data['title'] = 'Profile';
         $data['user'] = $this->user->where('id', session()->get('id'))->first();
+        $data['req'] = \Config\Services::request();
+        
         return view('pages/profile/index', $data);
     }
 
@@ -69,6 +71,6 @@ class ProfileController extends BaseController
         $id = session()->get('id');
         $this->user->update($id, $data);
 
-        return redirect()->back();
+        return redirect()->back()->with('msg', 'Berhasil memperbarui profile!');
     }
 }
